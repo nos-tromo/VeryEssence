@@ -1,0 +1,25 @@
+# all hidden files and directories
+.*
+!.gitignore
+!.python-version
+
+# directories
+__pycache__
+data/
+env/
+gguf/
+output/
+uploads/
+
+# files
+*.code-workspace
+*.db
+*.gguf
+*.json
+*.log
+*.mkv
+*.mp3
+*.mp4
+*.wav
+*.webm
+*.zip

@@ -1,0 +1,162 @@
+/* Global settings */
+body {
+    background-color: #121212; /* Darker background */
+    color: #e0e0e0; /* Light gray text */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+/* Form container styles */
+form {
+    margin: 40px auto; /* Increase top and bottom margin for more space */
+    padding: 30px; /* Increase padding inside the form */
+    max-width: 700px; /* Increase to accommodate 2 columns */
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Label and input field styling */
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #e0e0e0; /* Light gray labels */
+}
+
+input, select {
+    width: 100%; /* Set all input fields and dropdowns to full width */
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #555555; /* Darker border */
+    border-radius: 5px;
+    background-color: #2b2b2b; /* Darker input field background */
+    color: #ffffff; /* White text for input fields */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+/* Adjust column layout for fields */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-column {
+    flex: 1;
+}
+
+/* Center the button at the bottom */
+.center-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50; /* Green button */
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+input[type="submit"]:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Styling for labels and checkboxes */
+label.checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Increased margin to give more space between checkboxes */
+    font-weight: normal; /* Ensure the text is not bold */
+    padding-bottom: 10px; /* Adds space below the checkboxes */
+}
+
+label.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+/* Result placeholder styles */
+#result {
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto; /* Center-align the result container */
+    background-color: #1f1f1f; /* Matching form background */
+    border-radius: 10px;
+    display: none; /* Initially hidden */
+}
+
+#result p {
+    color: #ffffff;
+}
+
+#result h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#result pre {
+    background-color: #2e2e2e; /* Darker background for text blocks */
+    padding: 10px;
+    border-radius: 5px;
+    height: 300px; /* Fixed height */
+    overflow-y: auto; /* Allows scrolling if log exceeds container height */
+    margin-top: 20px; /* Add some space above the log container */
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+footer a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #388e3c;
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto; /* Auto height for flexibility */
+    margin: 0 auto; /* Center the text */
+    padding: 10px 0; /* Adjust padding to remove excess space */
+}
+
+/* Preformatted text styling */
+.footer-content pre {
+    white-space: pre-wrap; /* Wrap text to prevent overflow */
+    text-align: center;
+    font-size: 1.5em;
+    max-width: 90%; /* Set a max width for the content */
+    margin: 0 auto; /* Center the preformatted text */
+    padding-top: 0; /* Remove padding at the top */
+    padding-bottom: 10px; /* Optional padding at the bottom */
+    line-height: 1.5; /* Improve readability */
+}

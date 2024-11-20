@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VeryEssence - Process Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>Processing initiated!</h1>
+    <h2>See console log for results.</h2>
+</header>
+
+<div class="result-content">
+    <p>{{ result }}</p>
+
+    <div class="center-button">
+        <a href="/" class="btn">Back to Upload</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+text	category
+Mr. Speaker	Person
+House	Organization
+20 or 30,000	Date/Time
+men	Person
+French First Army	Organization
+British Expeditionary Force	Organization
+Amiens Abdel Gap	Location
+Dunkirk	Location
+hundred	Quantity
+U-boats	Weapon
+British	Organization
+French	Organization
+Royal Navy	Organization
+Nazi	group
+Royal Air Force	Organization
+German	Location
+Air Force	Organization
+bombers	Weapon
+Germans	Organization
+Knights of the Round Table	Organization
+Crusaders	Organization
+France	Location
+Belgium	Location
+Belgian	Location
+Herr Hitler	Person
+British Isles	Location
+Napoleon	Person
+England	Location
+boulogne	Location
+island home	Location
+His Majesty's government	Organization
+British Empire	Organization
+French Republic	Organization
+British fleet	Organization
+island	Location
+seas	Location
+new world	Location
+old	Location
