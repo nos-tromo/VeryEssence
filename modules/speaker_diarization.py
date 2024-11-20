@@ -60,6 +60,8 @@ class SpeakerDiarization(FileProcessor):
     def _get_api_key(self, token: str = "HF_HUB_TOKEN") -> None:
         """
         Retrieve the API key from the environment or prompt the user to enter it.
+
+        :param token: The API key to use.
         """
         try:
             dotenv_path = find_dotenv()
