@@ -57,7 +57,7 @@ class SpeakerDiarization(FileProcessor):
         self.logger.info(f"{message}: {self.file_path}.")
         self.logger.info(f"Device selected for speaker diarization: {self.device}")
 
-    def _get_api_key(self, token: str = "HF_HUB_TOKEN"):
+    def _get_api_key(self, token: str = "HF_HUB_TOKEN") -> None:
         """
         Retrieve the API key from the environment or prompt the user to enter it.
         """
