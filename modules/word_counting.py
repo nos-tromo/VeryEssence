@@ -261,7 +261,11 @@ class WordCount(FileProcessor):
                 text = get_display(text)
             # Generate the word cloud
             wc = WordCloud(
-                font_path=self.font_path, background_color="white", width=2000, height=1000, collocations=False
+                font_path=self.font_path if self.language == "ar" else None,
+                background_color="white",
+                width=2000,
+                height=1000,
+                collocations=False
             ).generate(text)
 
             fig = plt.figure(figsize=(20, 10), facecolor="k")
