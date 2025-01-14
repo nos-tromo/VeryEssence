@@ -100,7 +100,7 @@ class WordCount(FileProcessor):
             raise
 
     @staticmethod
-    def _tokenize_words(text: str, language: str) -> list:
+    def _tokenize_text(text: str, language: str) -> list:
         """
         Tokenize and lemmatize a text input into a list of words.
 
@@ -173,7 +173,7 @@ class WordCount(FileProcessor):
 
         texts = self.df[self.column].dropna().astype(str)
         vectorizer = CountVectorizer(
-            tokenizer=lambda txt: self._tokenize_words(
+            tokenizer=lambda txt: self._tokenize_text(
                 txt, self._convert_to_language_name()
             )
         )
