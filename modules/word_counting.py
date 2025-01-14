@@ -7,8 +7,9 @@ from keybert import KeyBERT
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-import nltk
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import sent_tokenize, word_tokenize
 import pandas as pd
 import pycountry
 from sklearn.feature_extraction.text import CountVectorizer
@@ -156,7 +157,7 @@ class WordCount(FileProcessor):
             if self.language == 'ar':
                 return self._arabic_sentence_splitter(text)
             else:
-                return nltk.tokenize.sent_tokenize(text)
+                return sent_tokenize(text)
         except Exception as e:
             self.logger.error(f"Error splitting text into sentences: {e}", exc_info=True)
             raise
