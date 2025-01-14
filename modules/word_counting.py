@@ -99,18 +99,20 @@ class WordCount(FileProcessor):
             raise
 
     @staticmethod
-    def _tokenize_words(text: str, language_name: str) -> list:
+    def _tokenize_words(text: str, language: str) -> list:
         """
-        Tokenize the given text into a list of words.
+        Tokenize and lemmatize a text input into a list of words.
 
-        :param text: The text to be tokenized.
-        :param language_name: The language of the text.
+        :param text: The text to be processed.
+        :param language: The language of the text.
         :return: A list of tokenized words.
         """
         try:
-            words = nltk.word_tokenize(text)
-            words = [word.lower() for word in words if word.isalpha()]
-            return [word for word in words if word not in stopwords.words(language_name)]
+            tokens = word_tokenize(text)
+            tokens = [token.lower() for token in tokens if token.isalpha()]
+            tokens = [token for token in tokens if token not in stopwords.words(language)]
+            lemmatizer = WordNetLemmatizer()
+            return [lemmatizer.lemmatize(token) for token in tokens]
         except Exception as e:
             logging.getLogger(WordCount.__name__).error(f"Error tokenizing words: {e}", exc_info=True)
             raise
