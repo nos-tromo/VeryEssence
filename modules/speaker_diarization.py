@@ -1,5 +1,6 @@
 import datetime
 from datetime import timedelta
+import getpass
 import logging
 import os
 
@@ -25,6 +26,7 @@ class SpeakerDiarization(FileProcessor):
         file (str): The processed audio file for diarization.
         model_id (str): The path to the pre-trained diarization model.
         device (torch.device): The device used for model inference (CPU, CUDA, or MPS).
+        api_key (str): The API key used for model inference.
         diarization: The diarization result object.
 
     Methods:
@@ -53,27 +55,30 @@ class SpeakerDiarization(FileProcessor):
         self.device = torch.device(
             "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
         )
+        self.api_key = self._get_api_key()
         self.diarization = None
         self.logger.info(f"{message}: {self.file_path}.")
         self.logger.info(f"Device selected for speaker diarization: {self.device}")
 
-    def _get_api_key(self, token: str = "HF_HUB_TOKEN") -> None:
+    def _get_api_key(self, token: str = "HF_HUB_TOKEN") -> str:
         """
         Retrieve the API key from the environment or prompt the user to enter it.
 
         :param token: The API key to use.
+        :return: The API key.
         """
         try:
             dotenv_path = find_dotenv()
             load_dotenv(dotenv_path)
-            self.api_key = os.getenv(token)
-            if not self.api_key:
-                self.api_key = input("Hugging Face token not found. Please enter your API key: ")
+            api_key = os.getenv(token)
+            if not api_key:
+                api_key = getpass.getpass("Hugging Face token not found. Please enter your API key: ")
                 if dotenv_path:
                     set_key(dotenv_path, token, self.api_key)
                 else:
                     with open(".env", "w") as env_file:
                         env_file.write(f"{token}={self.api_key}\n")
+            return api_key
         except Exception as e:
             self.logger.error(f"Error retrieving Hugging Face token: {e}", exc_info=True)
             raise
